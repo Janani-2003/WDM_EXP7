@@ -32,7 +32,8 @@ in a network of web pages based on the structure of the links between them.
     <p>    Visualize using bar chart to represent authority and hub scores.
 
 ### Program:
-
+##### REGISTER NUMBER:212221230039
+##### NAME:JANANI R
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -44,16 +45,16 @@ def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
     
     for i in range(max_iterations):
         # Authority update
-
-             /*WRITE YOUR CODE HERE
+        new_authority_scores = np.dot(adjacency_matrix.T, hub_scores)
+        new_authority_scores /= np.linalg.norm(new_authority_scores, ord=2)  # Normalizing
         
         # Hub update
-
-             /*WRITE YOUR CODE HERE
+        new_hub_scores = np.dot(adjacency_matrix, new_authority_scores)
+        new_hub_scores /= np.linalg.norm(new_hub_scores, ord=2)  # Normalizing
         
         # Check convergence
-
-             /*WRITE YOUR CODE HERE
+        authority_diff = np.linalg.norm(new_authority_scores - authority_scores, ord=2)
+        hub_diff = np.linalg.norm(new_hub_scores - hub_scores, ord=2)
         
         if authority_diff < tol and hub_diff < tol:
             break
@@ -91,7 +92,8 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 ```
-
 ### Output:
+![image](https://github.com/Janani-2003/WDM_EXP7/assets/94288340/902ef9f5-22af-4d2b-b5f4-66fcb3c62b2d)
 
 ### Result:
+Thus Link Analysis using HITS Algorithm in Python is successfully implemented.
